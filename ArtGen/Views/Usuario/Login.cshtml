@@ -1,0 +1,42 @@
+﻿@model ArtGen.Models.USUARIO
+
+@{
+    ViewBag.Title = "Login";
+}
+<section id="loginForm">
+@using (Html.BeginForm( new { ReturnUrl = ViewBag.ReturnUrl }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        
+    <fieldset style = " width: 225px">
+        <legend style="font-family: Segoe UI, Verdana, Helvetica, Sans-Serif;">Formulario de inicio de sesión</legend>
+    
+        <ul style=" font-family: Segoe UI, Verdana, Helvetica, Sans-Serif;">
+            <li>
+            <a>
+                @Html.LabelFor(m => m.USERNAME, new { style="font-family: Segoe UI, Verdana, Helvetica, Sans-Serif;"})
+                @Html.TextBoxFor(m => m.USERNAME, new {style="width:80px" })
+                @Html.ValidationMessageFor(m => m.USERNAME)
+                </a>
+            </li>
+            <li>
+                <a>
+                @Html.LabelFor(m => m.PASSWORD,new {style="font-family: Segoe UI, Verdana, Helvetica, Sans-Serif;"})
+                @Html.PasswordFor(m => m.PASSWORD, new {style = "width : 80px" })
+                @Html.ValidationMessageFor(m => m.PASSWORD)
+                </a>
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Recordar, new { @class = "checkbox" })
+                @Html.CheckBoxFor(m => m.Recordar)                
+            </li>
+        </ul>
+        <input type="submit" value="Iniciar sesión" />
+      </fieldset>     
+}
+</section>
+
+
+

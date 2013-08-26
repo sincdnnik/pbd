@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+    <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8" />
+    <style>
+        #foot
+        {
+            font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+        }
+        .menu
+        {
+            font-family: "Rockwell", Verdana, Helvetica, Sans-Serif;
+            text-decoration:none;
+        }
+        .logo
+        {
+            display: block;
+            height: 80px;
+            width: 248px;
+            text-indent: -9999px;
+            margin-left:auto;
+            margin-right:auto;
+            margin-bottom:10px;
+            margin-top:10px;
+
+        }
+
+        #login
+        {margin-top:50px;
+         margin-right:20px;
+         float:right;
+        }
+        #menu li
+        {
+            float:left;
+            display:block;
+            background:url(/Imagenes/norm_right1.jpg) no-repeat right top;       
+        }
+        #menu li a
+        {
+            display:block; 
+	        background:url(/Imagenes/norm_left1.jpg) no-repeat left top; 
+	        padding:5px 10px;    
+            font: 15px Verdana,Serif; 
+        }
+        #menu #current
+        {
+            background-image:url(/Imagenes/norm_left_on.jpg);
+        }
+        #menu #current a
+        {
+            background-image:url(/Imagenes/norm_left_on.jpg);
+        }
+
+        .isess
+        {
+            font-family: Segoe UI, Verdana, Helvetica, Sans-Serif;
+            text-decoration: none;
+            background-color: #d3dce0;        
+            padding: 2px 3px;
+        }
+
+    </style>
+
+    </head>
+    <body>
+        <header style="height:100px; border:6px solid #ADB96E; position:relative;			
+				border-top-left-radius: 3em; border-top-right-radius: 3em; background-color: #ADB96E">
+            <div class="content-wrapper">
+                <div class="logou" style="margin-left:auto; margin-right:auto; ">
+                    <a href=@Url.Action("Index","Home")>
+                        <img src="\Imagenes\logo-artegenero2.png" class="logo" width="248" height="80">
+                    </a>
+                </div>
+                <div class="float-right" >
+                    <section id="login" style=" bottom:0; right:0;position:absolute; font-family: Segoe UI, Verdana, Helvetica, Sans-Serif;">
+                        <div style="width: auto;">
+                          
+                            @if (Request.IsAuthenticated) {
+                                <text>
+                                ¡Hola <strong>@Html.Encode(User.Identity.Name)</strong>! 
+                                @Html.ActionLink("Cerrar Sesión", "Logout", new { Controller = "Usuario" } , new { @class = "isess" })
+                                </text>
+                                @Html.ActionLink("Pedidos", "Index", new { Controller = "Pedido" ,  id = @Html.Encode(User.Identity.Name) } , new {  @class = "isess" })
+                            }
+                            else {
+            
+                                @Html.ActionLink("Iniciar Sesión", "Login", new { Controller = "Usuario" }, new { @class = "isess" })
+                            }
+                        </div>
+                    </section>
+                    <nav>
+                        <ul id="menu" style="bottom:-6px; margin:0; position: absolute">
+                            <li>@Html.ActionLink("Home", "Index", new { Controller = "Home" } , new { @class = "menu" })</li>
+                            <li>@Html.ActionLink("Quienes Somos", "About", new { Controller = "Home" } , new {@class="menu"})</li>
+                            <li>@Html.ActionLink("Contacto", "Contact", new { Controller = "Home" } , new { @class = "menu" })</li>
+                            <li>@Html.ActionLink("Catálogo", "Index", new { Controller="Catalogo" } , new { @class = "menu" })</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body" style=" border:6px solid white; height:445px;">
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div id=foot style="height:100px; font-size:20px; border:6px solid #CCC49F; line-height:100px; background-color: #CCC49F; 
+                border-bottom-left-radius: 3em;border-bottom-right-radius: 3em; text-align: center;">
+				Servicios y Ventas: (2)6896567 - Santiago de Chile - mail: contacto@artegenero.cl
+                    © 2013 - S.I.A.M.P. Arte Género
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>
+
+

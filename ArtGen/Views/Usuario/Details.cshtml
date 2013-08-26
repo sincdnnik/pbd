@@ -1,0 +1,57 @@
+﻿@model ArtGen.Models.USUARIO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>USUARIO</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.USERNAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.USERNAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PASSWORD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PASSWORD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NOMBRE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NOMBRE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MAIL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MAIL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FONO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FONO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CARGO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CARGO)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

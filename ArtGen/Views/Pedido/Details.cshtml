@@ -1,0 +1,57 @@
+﻿@model ArtGen.Models.REPORTE_PRODUCCION
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>REPORTE_PRODUCCION</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_REPORTE_PRODUCCION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_REPORTE_PRODUCCION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INCLUSION.COLOR)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INCLUSION.COLOR)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_DISENO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_DISENO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_MENSAJE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_MENSAJE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.INFORMACION_PRODUCCION)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.INFORMACION_PRODUCCION)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PORCENTAJE_AVANCE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PORCENTAJE_AVANCE)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

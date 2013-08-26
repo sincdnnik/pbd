@@ -1,0 +1,36 @@
+﻿@model ArtGen.Models.FOTOGRAFIA
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FOTOGRAFIA</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ID_FOTOGRAFIA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ID_FOTOGRAFIA)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DISENO.NOMBRE_DISENO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DISENO.NOMBRE_DISENO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.URL_FOTOGRAFIA)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.URL_FOTOGRAFIA)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

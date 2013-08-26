@@ -1,0 +1,76 @@
+﻿@model ArtGen.Models.USUARIO
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>USUARIO</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.USERNAME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.USERNAME)
+            @Html.ValidationMessageFor(model => model.USERNAME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PASSWORD)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PASSWORD)
+            @Html.ValidationMessageFor(model => model.PASSWORD)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NOMBRE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NOMBRE)
+            @Html.ValidationMessageFor(model => model.NOMBRE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MAIL)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MAIL)
+            @Html.ValidationMessageFor(model => model.MAIL)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FONO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FONO)
+            @Html.ValidationMessageFor(model => model.FONO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CARGO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CARGO)
+            @Html.ValidationMessageFor(model => model.CARGO)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
